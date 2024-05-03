@@ -1,8 +1,7 @@
 
 # CARid Project
 
-Build a CARid Project application using the MERN (MongoDB, Express.js, Next.js, Node.js) stack. The application should allow users to perform CRUD operations on tasks, register accounts, log in, and exclusively manage their own tasks. Pagination and input validation are mandatory.
-
+Build a CARid Project application using the MERN (MongoDB, Express.js, React.js, TailwindCSS) stack. The application should allow users to perform CRUD operations on Car, register accounts, log in, and exclusively manage their own Car. Pagination and input validation are mandatory.
 
 
 ## Run Locally
