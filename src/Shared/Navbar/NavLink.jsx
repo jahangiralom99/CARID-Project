@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavLink = () => {
     return (
-        <ul className="flex flex-row font-medium  gap-[1.5rem] mt-0 space-x-8 rtl:space-x-reverse text-sm">
+        <ul className="  md:flex md:flex-row md:font-medium  md:gap-[1.5rem] md:mt-0 md:space-x-8 md:rtl:space-x-reverse md:text-sm">
             <li>
                 <Link to='' className="text-gray-900 dark:text-white hover:underline" aria-current="page">Parts</Link>
             </li>
