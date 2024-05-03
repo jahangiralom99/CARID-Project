@@ -4,7 +4,6 @@ import NavLink from './NavLink';
 import './Drawer.css';
 import './NavDrawer.css'
 import NavDrawer from './NavDrawer';
-import { RxHamburgerMenu } from "react-icons/rx";
 
 
 const Navbar = () => {
