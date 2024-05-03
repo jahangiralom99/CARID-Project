@@ -5,6 +5,9 @@ import NavDrawer from './NavDrawer';
 import { NavLink } from 'react-router-dom';
 import { VscAccount } from "react-icons/vsc";
 import { BsCart3 } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import Search from '../../Components/Search/Search';
+import Vehicle from '../../Components/VehicleSelect/Vehicle';
 
 
 
@@ -66,28 +69,27 @@ const Navbar = () => {
 
                     {/* search bar code  */}
 
-                    <div className='col-span-2 hidden md:block'>
-                        <form className="max-w-md mx-auto">
-                            <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                            <div className="relative">
-                                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                    <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                    </svg>
-                                </div>
-                                <input type="search" id="default-search" className="block h-[8vh] w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                            </div>
-                        </form>
-                    </div>
+                    <Search />
+
                     {/* select your vehicale code  */}
-                    <div className='flex justify-center sm:hidden lg:block'>
-                        <NavLink className="btn glass bg-[#EEF1F9]">
-                            <svg className='text-[1.5rem]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M240 114h-29.51l-43.9-43.9a13.94 13.94 0 0 0-9.9-4.1H44.28a14 14 0 0 0-11.65 6.23L3 116.67A6 6 0 0 0 2 120v48a14 14 0 0 0 14 14h18.6a30 30 0 0 0 58.8 0h69.2a30 30 0 0 0 58.8 0H240a14 14 0 0 0 14-14v-40a14 14 0 0 0-14-14M42.62 78.89a2 2 0 0 1 1.66-.89h112.41a2 2 0 0 1 1.41.59L193.52 114H19.21ZM64 194a18 18 0 1 1 18-18a18 18 0 0 1-18 18m128 0a18 18 0 1 1 18-18a18 18 0 0 1-18 18m50-26a2 2 0 0 1-2 2h-18.6a30 30 0 0 0-58.8 0H93.4a30 30 0 0 0-58.8 0H16a2 2 0 0 1-2-2v-42h226a2 2 0 0 1 2 2Z"></path></svg>
-                            <h6>Select Your Vehicle</h6>
-                        </NavLink>
+
+                    <div className='sm:hidden md:hidden lg:block'>
+                    <Vehicle />
                     </div>
+
+
                     {/* login page and cart page code  */}
                     <div className="flex justify-end items-center  space-x-6 rtl:space-x-reverse">
+                        {/* Open the modal using document.getElementById('ID').showModal() method */}
+                        <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsSearch className='text-[1.5rem] block md:hidden' /></button>
+                        <dialog id="my_modal_2" className="modal">
+                            <div className="modal-box">
+                                <Search />
+                            </div>
+                            <form method="dialog" className="modal-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
                         <NavLink to='/login'><VscAccount className='text-[1.5rem]' /></NavLink>
                         <NavLink to='/cart'><BsCart3 className='text-[1.5rem]' /></NavLink>
                     </div>
@@ -102,13 +104,8 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-            <nav className="bg-gray-50 dark:bg-gray-700 block lg:hidden  ">
-                <div className='flex justify-center'>
-                    <NavLink className="btn glass">
-                        <svg className='text-[1.5rem]' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M240 114h-29.51l-43.9-43.9a13.94 13.94 0 0 0-9.9-4.1H44.28a14 14 0 0 0-11.65 6.23L3 116.67A6 6 0 0 0 2 120v48a14 14 0 0 0 14 14h18.6a30 30 0 0 0 58.8 0h69.2a30 30 0 0 0 58.8 0H240a14 14 0 0 0 14-14v-40a14 14 0 0 0-14-14M42.62 78.89a2 2 0 0 1 1.66-.89h112.41a2 2 0 0 1 1.41.59L193.52 114H19.21ZM64 194a18 18 0 1 1 18-18a18 18 0 0 1-18 18m128 0a18 18 0 1 1 18-18a18 18 0 0 1-18 18m50-26a2 2 0 0 1-2 2h-18.6a30 30 0 0 0-58.8 0H93.4a30 30 0 0 0-58.8 0H16a2 2 0 0 1-2-2v-42h226a2 2 0 0 1 2 2Z"></path></svg>
-                        <h6>Select Your Vehicle</h6>
-                    </NavLink>
-                </div>
+            <nav className="bg-gray-50 dark:bg-gray-700   block lg:hidden   ">
+                <Vehicle />
             </nav>
         </div>
     );
