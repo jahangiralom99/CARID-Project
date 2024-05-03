@@ -3,6 +3,12 @@ import { useState } from 'react';
 import './NavDrawer.css'
 import NavDrawer from './NavDrawer';
 import { NavLink } from 'react-router-dom';
+import { VscAccount } from "react-icons/vsc";
+import { BsCart3 } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import Search from '../../Components/Search/Search';
+import Vehicle from '../../Components/VehicleSelect/Vehicle';
+
 
 
 const Navbar = () => {
@@ -45,8 +51,11 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className="bg-white border-gray-200 dark:bg-gray-900 ">
-                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+            <nav className="bg-white border-gray-200 dark:bg-gray-900">
+                <div className="grid grid-cols-2 md:grid-cols-4  lg:grid-cols-5 flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+
+                    {/* menu and logo code  */}
+
                     <div className="flex items-center space-x-3 rtl:space-x-reverse">
                         <div className='sm:block :hidden '>
                             <button className="toggle-btn btn btn-square btn-ghost " onClick={toggleDrawer}>
@@ -57,11 +66,32 @@ const Navbar = () => {
                         <img src={logo} className="h-8" alt="Logo" />
                         <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
                     </div>
-                    <div>
-                        
+
+                    {/* search bar code  */}
+
+                    <Search />
+
+                    {/* select your vehicale code  */}
+
+                    <div className='sm:hidden md:hidden lg:block'>
+                    <Vehicle />
                     </div>
-                    <div className="flex items-center space-x-6 rtl:space-x-reverse">
-                        <a to='' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">Login</a>
+
+
+                    {/* login page and cart page code  */}
+                    <div className="flex justify-end items-center  space-x-6 rtl:space-x-reverse">
+                        {/* Open the modal using document.getElementById('ID').showModal() method */}
+                        <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsSearch className='text-[1.5rem] block md:hidden' /></button>
+                        <dialog id="my_modal_2" className="modal">
+                            <div className="modal-box">
+                                <Search />
+                            </div>
+                            <form method="dialog" className="modal-backdrop">
+                                <button>close</button>
+                            </form>
+                        </dialog>
+                        <NavLink to='/login'><VscAccount className='text-[1.5rem]' /></NavLink>
+                        <NavLink to='/cart'><BsCart3 className='text-[1.5rem]' /></NavLink>
                     </div>
                 </div>
             </nav>
@@ -73,6 +103,9 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
+            </nav>
+            <nav className="bg-gray-50 dark:bg-gray-700   block lg:hidden   ">
+                <Vehicle />
             </nav>
         </div>
     );
