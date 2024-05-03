@@ -7,7 +7,7 @@ const DrawerLinks = () => {
         <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
             <li>
                 <NavLink to='/' className='text-gray-900 md:text-[12px] dark:text-white hover:underline' >
-                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[16vw]">
+                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[13vw]">
                         <div className="flex-shrink-0">
                             <img className="w-8 h-8 rounded-full" src={logo} alt="Neil image" />
                         </div>
@@ -24,7 +24,7 @@ const DrawerLinks = () => {
             </li>
             <li>
                 <NavLink to='/' className='text-gray-900 md:text-[12px] dark:text-white hover:underline' >
-                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[16vw]">
+                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[13vw]">
                         <div className="flex-shrink-0">
                             <img className="w-8 h-8 rounded-full" src={logo} alt="Neil image" />
                         </div>
@@ -41,7 +41,7 @@ const DrawerLinks = () => {
             </li>
             <li>
                 <NavLink to='/' className='text-gray-900 md:text-[12px] dark:text-white hover:underline' >
-                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[16vw]">
+                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[13vw]">
                         <div className="flex-shrink-0">
                             <img className="w-8 h-8 rounded-full" src={logo} alt="Neil image" />
                         </div>
@@ -58,7 +58,7 @@ const DrawerLinks = () => {
             </li>
             <li>
                 <NavLink to='/' className='text-gray-900 md:text-[12px] dark:text-white hover:underline' >
-                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[16vw]">
+                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[13vw]">
                         <div className="flex-shrink-0">
                             <img className="w-8 h-8 rounded-full" src={logo} alt="Neil image" />
                         </div>
@@ -75,7 +75,7 @@ const DrawerLinks = () => {
             </li>
             <li>
                 <NavLink to='/' className='text-gray-900 md:text-[12px] dark:text-white hover:underline' >
-                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[16vw]">
+                    <div className="flex items-center w-[56vw] md:w-[25vw] lg:w-[13vw]">
                         <div className="flex-shrink-0">
                             <img className="w-8 h-8 rounded-full" src={logo} alt="Neil image" />
                         </div>
