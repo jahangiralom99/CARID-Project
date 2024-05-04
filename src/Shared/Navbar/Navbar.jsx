@@ -84,7 +84,7 @@ const Navbar = () => {
                         <button className="" onClick={() => document.getElementById('my_modal_2').showModal()}><BsSearch className='text-[1.5rem] block md:hidden' /></button>
                         <dialog id="my_modal_2" className="modal">
                             <div className="modal-box">
-                                <Search />
+                                <Search />  
                             </div>
                             <form method="dialog" className="modal-backdrop">
                                 <button>close</button>
