@@ -25,19 +25,17 @@ const SignUp = () => {
                     <div className="mb-6">
                         <label className="block mb-2 font-extrabold" htmlFor="">Password</label>
                         <div className=" flex   leading-6 border-2 border-[#1F2937] rounded ">
-                            <input className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type="password" name="" id=""  placeholder="**********" />
+                            <input className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type={visible ? 'text' : 'password'} name="" id="" placeholder="**********" />
                             <div className="flex items-center px-4">
                                 {
-                                    visible ? <IoEye className="text-xl" onClick={showPassword} /> : <IoMdEyeOff  className="text-xl" onClick={showPassword} />
+                                    visible ? <IoEye style={{ cursor: 'pointer' }} className="text-xl" onClick={showPassword} /> : <IoMdEyeOff style={{ cursor: 'pointer' }} className="text-xl" onClick={showPassword} />
                                 }
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-wrap -mx-4 mb-6 items-center text-center justify-between">
                         <div className="w-full lg:w-auto px-4 mb-4 lg:mb-0">
-                            <label htmlFor="">
-                                <span className="ml-1 font-extrabold text-xs">By creating an account, you are agreeing to our privacy policy and terms</span>
-                            </label>
+                           <p>By creating an account, you are agreeing to our privacy policy and terms</p>
                         </div>
                         <div className="w-full lg:w-auto px-4"></div>
                     </div>
