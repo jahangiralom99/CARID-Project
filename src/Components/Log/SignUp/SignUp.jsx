@@ -5,12 +5,12 @@ import { useState } from "react";
 
 
 const SignUp = () => {
-    const [visible , setVisible] = useState();
-    console.log(visible);
-    const open = e =>{
-        setVisible(e)
-        console.log('hello world', e);
+    const [visible, setVisible] = useState(false);
+ 
+    const showPassword = () => {
+        setVisible(!visible);
     }
+
     return (
         <div className="container px-4 mx-auto my-10">
             <div className="max-w-lg mx-auto">
@@ -24,11 +24,13 @@ const SignUp = () => {
                     </div>
                     <div className="mb-6">
                         <label className="block mb-2 font-extrabold" htmlFor="">Password</label>
-                        <input className="inline-block w-full relative  p-4 leading-6 text-lg font-extrabold placeholder-[#1F2937] bg-white shadow border-2 border-[#1F2937]rounded" type='password' placeholder="**********" />
-                        <div>
-                        {
-                            visible ?  <IoEye onClick={() => open(false)} /> : <IoMdEyeOff onClick={() => open(true)} />
-                        }
+                        <div className=" flex   leading-6 border-2 border-[#1F2937] rounded ">
+                            <input className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type="password" name="" id=""  placeholder="**********" />
+                            <div className="flex items-center px-4">
+                                {
+                                    visible ? <IoEye className="text-xl" onClick={showPassword} /> : <IoMdEyeOff  className="text-xl" onClick={showPassword} />
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className="flex flex-wrap -mx-4 mb-6 items-center text-center justify-between">
