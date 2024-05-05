@@ -1,22 +1,49 @@
+import { useEffect, useState } from "react";
+
 const SelectVehicle = () => {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset >= 500) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="max-w-screen-xl mx-auto border bg-[#e8eeff]  dark:text-white text-black mt-12 rounded-lg p-10">
+    <div className="max-w-screen-xl mx-auto border bg-[#e8eeff] dark:text-white text-black mt-12 rounded-lg p-10">
       <h1 className="text-2xl font-semibold">Select Your Vehicle</h1>
       <p className="font-medium mt-1">
         Provide vehicle details to confirm fitment
       </p>
-      <div className="flex flex-col lg:flex-row items-center gap-6 mt-5">
-        <div className="border border-black p-3 flex items-center gap-3 w-full rounded-lg">
+      <div
+        className={`overflow-hidden flex lg:bg-white p-3 rounded-lg flex-col flex-grow lg:flex-row ${
+          isSticky ? "lg:fixed -top-4 z-50 mx-auto -ml-12 w-full" : ""
+        } items-center gap-6 mt-5`}
+      >
+        <div className="border w-1/2 border-black p-3 flex items-center gap-3 rounded-lg">
           <h1 className="font-bold text-xl flex items-center gap-3">
             1 <span>|</span>
           </h1>
-          <select className="w-full border-none" name="" id="1">
-            <option value="2024">2021</option>
+          <select className="w-full border-none rounded-md" name="" id="1">
+            <option defaultValue="Year" value="">
+              Year
+            </option>
+            <option value="2024">2029</option>
             <option value="2024">2029</option>
             <option value="2024">2022</option>
           </select>
         </div>
-        <div className="border w-full border-black p-3 flex items-center gap-3 rounded-lg">
+        <div className="border w-1/2  border-black p-3 flex items-center gap-3 rounded-lg">
           <h1 className="font-bold text-xl flex items-center gap-3">
             2 <span>|</span>
           </h1>
@@ -26,7 +53,7 @@ const SelectVehicle = () => {
             <option value="2011">2024</option>
           </select>
         </div>
-        <div className="border w-full border-black p-3 flex items-center gap-3 rounded-lg">
+        <div className="border w-1/2 border-black p-3 flex items-center gap-3 rounded-lg">
           <h1 className="font-bold text-xl flex items-center gap-3">
             3 <span>|</span>
           </h1>
@@ -35,6 +62,9 @@ const SelectVehicle = () => {
             <option value="2026">2023</option>
             <option value="2024">2023</option>
           </select>
+        </div>
+        <div className="w-1/2 cursor-pointer text-center  border rounded-lg bg-[#3761bf] hover:bg-[#15306b]">
+          <button className="text-white py-4 font-bold">GO</button>
         </div>
       </div>
     </div>
