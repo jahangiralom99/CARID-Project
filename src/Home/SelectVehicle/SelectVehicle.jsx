@@ -27,7 +27,7 @@ const SelectVehicle = () => {
       </p>
       <div
         className={`overflow-hidden flex lg:bg-white p-3 rounded-lg flex-col lg:flex-row ${
-          isSticky ? "lg:fixed -top-4 z-50 mx-auto -ml-12 w-full" : ""
+          isSticky ? "lg:fixed -top-4 z-50 mx-auto lg:-ml-12 w-full" : ""
         } items-center gap-6 mt-5`}
       >
         <div className="w-full">
