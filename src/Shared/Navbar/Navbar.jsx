@@ -1,5 +1,5 @@
 import logo from "../../../public/logo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./NavDrawer.css";
 import NavDrawer from "./NavDrawer";
 import { Link, NavLink } from "react-router-dom";
@@ -8,23 +8,24 @@ import { BsCart3 } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import Search from "../../Components/Search/Search";
 import Vehicle from "../../Components/VehicleSelect/Vehicle";
-import { useQuery } from "react-query";
 import Loading from "../Loading/Loading";
-import useAxios from "../../Hooks/useAxios";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const axios = useAxios();
-  const { data = [], isLoading } = useQuery({
-    queryKey: ["nav"],
-    queryFn: async () => {
-      const res = await axios.get("/category");
-      return res.data;
-    },
-  });
+  const [loading , setLoading] = useState(false)
+  const [categoryData, setCategory] = useState([]);
 
-  if (isLoading) return <Loading />;
-  //   console.log(data);
+  useEffect(() => {
+    setLoading(true)
+    fetch(`https://carid-project-server.vercel.app/api/v1/category`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCategory(data)
+        setLoading(false)
+      });
+  }, []);
+
+  if (loading) return <Loading />;
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   const navLink = (
     <>
-      {data?.map((item) => (
+      {categoryData?.map((item) => (
         <li key={item._id}>
           <NavLink
             to={`/category/${item.category}`}

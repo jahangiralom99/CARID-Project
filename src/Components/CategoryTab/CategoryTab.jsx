@@ -1,23 +1,30 @@
 /* eslint-disable react/prop-types */
-import { useQuery } from "react-query";
+import { useEffect, useState } from "react";
 import Loading from "../../Shared/Loading/Loading";
-import useAxios from "../../Hooks/useAxios";
 
 const CategoryTab = ({ category }) => {
-  const axios = useAxios();
-  const { data = [], isLoading } = useQuery({
-    queryKey: ["category", category],
-    queryFn: async () => {
-      const res = await axios.get(`/category-list?category=${category}`);
-      return res.data;
-    },
-  });
+  const [categoryData, setCategory] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  if (isLoading) return <Loading/>;
+  useEffect(() => {
+    setLoading(true);
+    fetch(
+      `https://carid-project-server.vercel.app/api/v1/category-list?category=${category}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setCategory(data);
+        setLoading(false);
+      });
+  }, [category]);
+
+  // console.log(categoryData);
+
+  if (loading) return <Loading />;
 
   return (
     <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 mt-12 px-3">
-      {data.map((item) => (
+      {categoryData?.map((item) => (
         <div
           className="cursor-pointer hover:border text-center hover:underline rounded-lg"
           key={item._id}
