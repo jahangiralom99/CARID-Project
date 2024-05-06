@@ -3,15 +3,17 @@ import Categories from "./Categories/Categories";
 import Discount from "./Discount/Discount";
 import SelectVehicle from "./SelectVehicle/SelectVehicle";
 import HotIdeas from "./HotIdeas/HotIdeas";
+import FeatureBrands from "./FeatureBrands/FeatureBrands";
 
 const Home = () => {
   return (
-    <div >
-          <Banner />
-          <SelectVehicle />
-          <Discount />
-          <Categories />
-          <HotIdeas/>
+    <div>
+      <Banner />
+      <SelectVehicle />
+      <Discount />
+      <Categories />
+      <HotIdeas />
+      <FeatureBrands />
     </div>
   );
 };
