@@ -1,117 +1,55 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Tabs } from "flowbite-react";
+
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import CategoryTab from "../../Components/CategoryTab/CategoryTab";
 
 const Categories = () => {
+
   return (
-    <section className="max-w-screen-xl mx-auto mt-12 px-3">
-      <Tabs aria-label="Tabs with icons" style="underline">
-        <Tabs.Item active title="Top Categories">
-          <div className="grid grid-cols-4">
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-          </div>
-        </Tabs.Item>
-        <Tabs.Item title="Parts">
-          <div className="grid grid-cols-4">
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-            <div className="hover:cursor-pointer hover:underline">
-              <img
-                className="object-center"
-                src="https://i.ibb.co/ZW6Xqss/wheels-and-rims-ic-5.jpg"
-                alt=""
-              />
-              <p className="text-center mt-5">Custom Wheels</p>
-            </div>
-          </div>
-        </Tabs.Item>
-      </Tabs>
+    <section className="max-w-screen-xl mx-auto mt-12 px-4">
+      <div>
+        <Tabs>
+          <TabList className="font-bold border-b-2 border-black gap-12">
+            <Tab>Parts</Tab>
+            <Tab>Wheels & Tires</Tab>
+            <Tab>Exterior</Tab>
+            <Tab>Lighting</Tab>
+            <Tab>Body</Tab>
+            <Tab>Interior</Tab>
+            <Tab>Audio</Tab>
+            <Tab>Automotive Tools</Tab>
+          </TabList>
+          {/* Category content */}
+          <TabPanel>
+            <CategoryTab category="parts"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="wheels_tires"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="exterior"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="lighting"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="body"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="interior"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="audio"></CategoryTab>
+          </TabPanel>
+          <TabPanel>
+            <CategoryTab category="automotive_tools"></CategoryTab>
+          </TabPanel>
+        </Tabs>
+      </div>
     </section>
   );
 };
 
 export default Categories;
+
+//

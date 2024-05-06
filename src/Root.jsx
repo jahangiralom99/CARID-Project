@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Shared/Footer/Footer";
 import Navbar from "./Shared/Navbar/Navbar";
+import 'react-tabs/style/react-tabs.css';
+
 
 const Root = () => {
     return (
         <div>
             <Navbar/>
-            <div className="min-h-screen z-50 py-10">
+            <div className="min-h-screen z-50 py-2 ">
             <Outlet/>
             </div>
            <div className="z-10">
