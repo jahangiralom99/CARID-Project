@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "firebase": "^10.11.1",
+=======
+    "axios": "^1.6.8",
+>>>>>>> 6bf80745c1697c17553c1c331a2fd68a69a871cc
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.9.0",
     "localforage": "^1.10.0",
