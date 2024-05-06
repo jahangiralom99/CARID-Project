@@ -18,11 +18,18 @@ const FeatureBrands = () => {
   return (
     <div className="max-w-screen-xl mx-auto mt-12 px-3">
       <div>
-        <h1 className="text-2xl font-semibold">Featured Brands</h1>
-        <div className="grid grid-cols-6 gap-5 mt-8">
+        <h1 className="text-2xl font-bold">Featured Brands</h1>
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-6 mt-8">
           {data?.map((item) => (
-            <div className="" key={item._id}>
-              <img className="object-contain" src={item.image} alt="" />
+            <div className="relative cursor-pointer" key={item._id}>
+              <div className="lg:w-52 h-40 rounded-lg bg-slate-100"></div>
+              <div className="absolute top-14 left-6 ">
+                <img
+                  className="object-contain "
+                  src={item.image}
+                  alt=""
+                />
+              </div>
             </div>
           ))}
         </div>
