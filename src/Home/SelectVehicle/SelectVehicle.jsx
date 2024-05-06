@@ -5,7 +5,7 @@ const SelectVehicle = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset >= 500) {
+      if (window.pageYOffset >= 700) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -26,44 +26,50 @@ const SelectVehicle = () => {
         Provide vehicle details to confirm fitment
       </p>
       <div
-        className={`overflow-hidden flex lg:bg-white p-3 rounded-lg flex-col flex-grow lg:flex-row ${
-          isSticky ? "lg:fixed -top-4 z-50 mx-auto -ml-12 w-full" : ""
+        className={`overflow-hidden flex lg:bg-white p-3 rounded-lg flex-col lg:flex-row ${
+          isSticky ? "lg:fixed -top-4 z-50 mx-auto lg:-ml-12 w-full" : ""
         } items-center gap-6 mt-5`}
       >
-        <div className="border w-1/2 border-black p-3 flex items-center gap-3 rounded-lg">
-          <h1 className="font-bold text-xl flex items-center gap-3">
-            1 <span>|</span>
-          </h1>
-          <select className="w-full border-none rounded-md" name="" id="1">
-            <option defaultValue="Year" value="">
-              Year
-            </option>
-            <option value="2024">2029</option>
-            <option value="2024">2029</option>
-            <option value="2024">2022</option>
-          </select>
+        <div className="w-full">
+          <div className="border border-black p-3 flex items-center gap-3 rounded-lg">
+            <h1 className="font-bold text-xl flex items-center gap-3">
+              1 <span>|</span>
+            </h1>
+            <select className="w-full border-none rounded-md" name="" id="1">
+              <option defaultValue="Year" value="">
+                Year
+              </option>
+              <option value="2024">2029</option>
+              <option value="2024">2029</option>
+              <option value="2024">2022</option>
+            </select>
+          </div>
         </div>
-        <div className="border w-1/2  border-black p-3 flex items-center gap-3 rounded-lg">
-          <h1 className="font-bold text-xl flex items-center gap-3">
-            2 <span>|</span>
-          </h1>
-          <select className="w-full" name="" id="2">
-            <option value="2022">2024</option>
-            <option value="2020">2024</option>
-            <option value="2011">2024</option>
-          </select>
+        <div className="w-full">
+          <div className="border border-black p-3 flex items-center gap-3 rounded-lg">
+            <h1 className="font-bold text-xl flex items-center gap-3">
+              2 <span>|</span>
+            </h1>
+            <select className="w-full" name="" id="2">
+              <option value="2022">2024</option>
+              <option value="2020">2024</option>
+              <option value="2011">2024</option>
+            </select>
+          </div>
         </div>
-        <div className="border w-1/2 border-black p-3 flex items-center gap-3 rounded-lg">
-          <h1 className="font-bold text-xl flex items-center gap-3">
-            3 <span>|</span>
-          </h1>
-          <select className="w-full" name="" id="3">
-            <option value="202">2032</option>
-            <option value="2026">2023</option>
-            <option value="2024">2023</option>
-          </select>
+        <div className="w-full">
+          <div className="border border-black p-3 flex items-center gap-3 rounded-lg">
+            <h1 className="font-bold text-xl flex items-center gap-3">
+              3 <span>|</span>
+            </h1>
+            <select className="w-full" name="" id="3">
+              <option value="202">2032</option>
+              <option value="2026">2023</option>
+              <option value="2024">2023</option>
+            </select>
+          </div>
         </div>
-        <div className="w-1/2 cursor-pointer text-center  border rounded-lg bg-[#3761bf] hover:bg-[#15306b]">
+        <div className="w-full cursor-pointer text-center  border rounded-lg bg-[#3761bf] hover:bg-[#15306b]">
           <button className="text-white py-4 font-bold">GO</button>
         </div>
       </div>
