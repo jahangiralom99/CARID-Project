@@ -9,7 +9,7 @@ const CategoryTab = ({ category }) => {
     queryKey: ["category", category],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/api/v1/category-list?category=${category}`
+        `https://carid-project-server.vercel.app/api/v1/category-list?category=${category}`
       );
       return res.data;
     },
