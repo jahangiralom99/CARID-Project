@@ -6,7 +6,7 @@ import HotIdeas from "./HotIdeas/HotIdeas";
 
 const Home = () => {
   return (
-    <div>
+    <div >
           <Banner />
           <SelectVehicle />
           <Discount />

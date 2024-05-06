@@ -26,8 +26,9 @@ const SelectVehicle = () => {
         Provide vehicle details to confirm fitment
       </p>
       <div
-        className={`overflow-hidden flex lg:bg-white p-3 rounded-lg flex-col lg:flex-row ${
-          isSticky ? "lg:fixed -top-4 z-50 mx-auto lg:-ml-12 w-full" : ""
+     
+        className={`overflow-hidden flex p-3 rounded-lg flex-col lg:flex-row ${
+          isSticky ? "lg:fixed lg:top-[-20px] z-50 bg-[#E8EEFF]  lg:left-12 px-16 lg:-ml-12  w-full " : ""
         } items-center gap-6 mt-5`}
       >
         <div className="w-full">
