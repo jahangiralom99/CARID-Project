@@ -1,10 +1,12 @@
-/* eslint-disable react/prop-types */
-import { useQuery } from "react-query";
-import Loading from "../../Shared/Loading/Loading";
+import { useParams } from "react-router-dom";
 import useAxios from "../../Hooks/useAxios";
+import { useQuery } from "react-query";
+import Loading from "../Loading/Loading";
 
-const CategoryTab = ({ category }) => {
+const NavCategory = () => {
   const axios = useAxios();
+  const { category } = useParams();
+
   const { data = [], isLoading } = useQuery({
     queryKey: ["category", category],
     queryFn: async () => {
@@ -13,10 +15,10 @@ const CategoryTab = ({ category }) => {
     },
   });
 
-  if (isLoading) return <Loading/>;
+  if (isLoading) return <Loading />;
 
   return (
-    <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 mt-12 px-3">
+    <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 mt-12 max-w-screen-xl mx-auto px-4">
       {data.map((item) => (
         <div
           className="cursor-pointer hover:border text-center hover:underline rounded-lg"
@@ -30,4 +32,4 @@ const CategoryTab = ({ category }) => {
   );
 };
 
-export default CategoryTab;
+export default NavCategory;

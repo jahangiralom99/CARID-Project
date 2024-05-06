@@ -4,6 +4,7 @@ import Error from "../Error/Error";
 import Home from "../Home/Home";
 import Login from "../Components/Log/Login/Login";
 import SignUp from "../Components/Log/SignUp/SignUp";
+import NavCategory from "../Shared/NavCategory/NavCategory";
 
 
 const Routes = createBrowserRouter([
@@ -15,6 +16,10 @@ const Routes = createBrowserRouter([
             {
               path: "/",
               element: <Home/> ,
+            },
+            {
+              path: "/category/:category",
+              element: <NavCategory/>
             },
             {
               path: "/login",
