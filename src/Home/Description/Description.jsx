@@ -16,7 +16,7 @@ const Description = () => {
         shelves to turn your automotive dreams into reality.
       </p>
       <div className="text-center mt-6">
-        <button className="border border-black rounded-md px-12 py-3 uppercase font-bold">
+        <button className="border hover:bg-slate-100 border-black rounded-md px-12 py-3 uppercase font-bold">
           See More
         </button>
       </div>
