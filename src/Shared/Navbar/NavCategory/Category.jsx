@@ -10,7 +10,8 @@ const Category = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`https://carid-project-server.vercel.app/api/v1/category-list?category=${category}`)
+    const url = `https://carid-project-server.vercel.app/api/v1/category-list?category=${category}`
+    fetch()
       .then((res) => res.json())
       .then((data) => {
         setCategory(data)
