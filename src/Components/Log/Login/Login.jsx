@@ -2,15 +2,37 @@ import { Link } from "react-router-dom";
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { useState } from "react";
+// import useAuthProvider from "../../../Hooks/useAuthProvider";
 
 
 
 const Login = () => {
 
     const [visible, setVisible] = useState(false);
+    // const {loginUser} = useAuthProvider();
  
     const showPassword = () => {
         setVisible(!visible);
+    }
+
+    const loginData = e => {
+        e.preventDefault();
+        console.log(e);
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email , password); 
+        // loginUser(email, password)
+        // .then((userCredential) => {
+        //     // Signed in 
+        //     const user = userCredential.user;
+        //     console.log(user);
+        //     // ...
+        // })
+        // .catch((error) => {
+        //     const errorMessage = error.message;
+        //     console.log(errorMessage);
+        //     // ..
+        // });
     }
 
     return (
@@ -19,15 +41,15 @@ const Login = () => {
                 <div className="text-center mb-6">
                     <h2 className="text-3xl md:text-4xl font-extrabold">Sign in</h2>
                 </div>
-                <form action="">
+                <form action="" onSubmit={loginData}>
                     <div className="mb-6">
                         <label className="block mb-2 font-extrabold" htmlFor="">Email</label>
-                        <input className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-[#1F2937] bg-white shadow border-2 border-[#1F2937] rounded" type="email" placeholder="email" />
+                        <input name="email" className="inline-block w-full p-4 leading-6 text-lg font-extrabold placeholder-[#1F2937] bg-white shadow border-2 border-[#1F2937] rounded" type="email" placeholder="email" />
                     </div>
                     <div className="mb-6">
                         <label className="block mb-2 font-extrabold" htmlFor="">Password</label>
                         <div className=" flex   leading-6 border-2 border-[#1F2937] rounded ">
-                            <input className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type={visible ? 'text' : 'password'} name="" id="" placeholder="**********" />
+                            <input name='password' className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type={visible ? 'text' : 'password'} name="" id="" placeholder="**********" />
                             <div className="flex items-center px-4">
                                 {
                                     visible ? <IoEye style={{ cursor: 'pointer' }} className="text-xl" onClick={showPassword} /> : <IoMdEyeOff style={{ cursor: 'pointer' }} className="text-xl" onClick={showPassword} />
