@@ -12,20 +12,20 @@ import Loading from "../Loading/Loading";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [loading , setLoading] = useState(false)
-  const [categoryData, setCategory] = useState([]);
+  // const [loading , setLoading] = useState(false)
+  // const [categoryData, setCategory] = useState([]);
 
-  useEffect(() => {
-    setLoading(true)
-    fetch(`https://carid-project-server.vercel.app/api/v1/category`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCategory(data)
-        setLoading(false)
-      });
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true)
+  //   fetch(`https://carid-project-server.vercel.app/api/v1/category`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setCategory(data)
+  //       setLoading(false)
+  //     });
+  // }, []);
 
-  if (loading) return <Loading />;
+  // if (loading) return <Loading />;
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -33,7 +33,47 @@ const Navbar = () => {
 
   const navLink = (
     <>
-      {categoryData?.map((item) => (
+      <li>
+        <NavLink
+          className="text-gray-900 md:text-[16px] dark:text-white hover:underline"
+          aria-current="page"
+        >
+          Parts
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="text-gray-900 md:text-[16px] dark:text-white hover:underline"
+          aria-current="page"
+        >
+          Parts
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="text-gray-900 md:text-[16px] dark:text-white hover:underline"
+          aria-current="page"
+        >
+          Parts
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="text-gray-900 md:text-[16px] dark:text-white hover:underline"
+          aria-current="page"
+        >
+          Parts
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="text-gray-900 md:text-[16px] dark:text-white hover:underline"
+          aria-current="page"
+        >
+          Parts
+        </NavLink>
+      </li>
+      {/* {categoryData?.map((item) => (
         <li key={item._id}>
           <NavLink
             to={`/category/${item.category}`}
@@ -43,7 +83,7 @@ const Navbar = () => {
             {item.name}
           </NavLink>
         </li>
-      ))}
+      ))} */}
     </>
   );
 
