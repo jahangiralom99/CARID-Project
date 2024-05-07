@@ -19,7 +19,7 @@ const Routes = createBrowserRouter([
             },
             {
               path: "/category/:category",
-              element: <Category/>
+              element: <Category/>,
             },
             {
               path: "/login",

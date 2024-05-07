@@ -4,6 +4,7 @@ import Discount from "./Discount/Discount";
 import SelectVehicle from "./SelectVehicle/SelectVehicle";
 import HotIdeas from "./HotIdeas/HotIdeas";
 import FeatureBrands from "./FeatureBrands/FeatureBrands";
+import Description from "./Description/Description";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Discount />
       <Categories />
       <HotIdeas />
+      <Description />
       <FeatureBrands />
     </div>
   );
