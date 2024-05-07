@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -14,46 +15,44 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ Children }) => {
   const [user, setUser] = useState(null);
-  const [loader, setLoader] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  // create Users
-  const createUser = (email, password) => {
-    setLoader(true);
-    return createUserWithEmailAndPassword(auth, email, password);
-  };
-
-  // login users
-  const login = (email, password) => {
-    setLoader(true);
-    return signInWithEmailAndPassword(auth, email, password);
-  };
-
-  // log out users
-  const logOut = () => {
-    setLoader(true);
-    return signOut(auth);
-  };
-
-  // manage users
   useEffect(() => {
-    const unSubscribedUsers = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoader(false);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
     });
     return () => {
-      unSubscribedUsers();
+      return unsubscribe();
     };
   }, []);
 
+  // user sign up code
 
-  console.log(user);
+  const createUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // user login code
+
+  const loginUser = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(email, password);
+  };
+
+  // user log Out code
+
+  const LogOut = () => {
+    return signOut(auth);
+  };
 
   const authInfo = {
     user,
+    loading,
     createUser,
-    login,
-    logOut,
-    loader,
+    loginUser,
+    LogOut,
   };
 
   return (
