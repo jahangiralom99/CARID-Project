@@ -11,7 +11,7 @@ const Category = () => {
   useEffect(() => {
     setLoading(true)
     const url = `https://carid-project-server.vercel.app/api/v1/category-list?category=${category}`
-    fetch()
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setCategory(data)
