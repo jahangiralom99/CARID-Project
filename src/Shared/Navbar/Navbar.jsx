@@ -12,16 +12,16 @@ import Loading from "../Loading/Loading";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [loading , setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [categoryData, setCategory] = useState([]);
 
   useEffect(() => {
-    setLoading(true)
-    fetch(`https://carid-project-server.vercel.app/api/v1/category`)
+    setLoading(true);
+    fetch(`https://carid-project-server.onrender.com/api/v1/category`)
       .then((res) => res.json())
       .then((data) => {
-        setCategory(data)
-        setLoading(false)
+        setCategory(data);
+        setLoading(false);
       });
   }, []);
 
