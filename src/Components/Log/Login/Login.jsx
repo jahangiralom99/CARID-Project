@@ -49,7 +49,7 @@ const Login = () => {
                     <div className="mb-6">
                         <label className="block mb-2 font-extrabold" htmlFor="">Password</label>
                         <div className=" flex   leading-6 border-2 border-[#1F2937] rounded ">
-                            <input name='password' className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type={visible ? 'text' : 'password'} name="" id="" placeholder="**********" />
+                            <input name='password' className="text-lg p-4 w-full border-0	 font-extrabold placeholder-[#1F2937]" type={visible ? 'text' : 'password'}  id="" placeholder="**********" />
                             <div className="flex items-center px-4">
                                 {
                                     visible ? <IoEye style={{ cursor: 'pointer' }} className="text-xl" onClick={showPassword} /> : <IoMdEyeOff style={{ cursor: 'pointer' }} className="text-xl" onClick={showPassword} />
